@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-font: "Outfit", sans-serif;
+  --primary-color: black;
+  --secondary-color: #212428;
+  --text-color: white;
+  --text-main: black;
+  --text-secondary: rgb(229, 229, 229);
+}
+body {
+  font-family: var(--primary-font);
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+p {
+  margin-bottom: 1em;
+  text-wrap: pretty;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0.6rem;
+}
+.img-wrapper,
+.footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0;
+}
+.img-wrapper {
+  min-height: 30vh;
+  width: 40%;
+  text-align: center;
+  padding: 1.5rem;
+}
+.img-wrapper span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-wrapper span h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.img-wrapper img {
+  height: 5em;
+}
+.img-wrapper > h3 {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+@media only screen and (max-width: 1200px) {
+  .img-wrapper,
+  .footer {
+    width: 100%;
+  }
+}
+.footer {
+  min-width: 4ch;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+.footer ul {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  transition: 0.5s ease-in-out all;
+}
+.footer ul li:hover {
+  transform: scale(1.2);
+}
+.footer a {
+  padding: 0.5rem;
+}
+.footer h3 {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 400;
+}
+@media only screen and (max-width: 1200px) {
+  .footer ul {
+    flex-direction: row;
+  }
+}
+/* Main Form */
+.content-wrapper {
+  flex: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: left;
+}
+div.form-wrapper {
+  max-inline-size: 50ch;
+}
+div.form-wrapper h3 {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+}
+div.form-wrapper > p {
+  color: var(--secondary-color);
+}
+div.form-wrapper .form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+div.form-wrapper .form fieldset {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  color: var(--secondary-color);
+}
+div.form-wrapper .form .form-label {
+  font-size: 0.9rem;
+  margin-bottom: 1em;
+}
+div.form-wrapper .form label input {
+  display: block;
+  width: 100%;
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid var(--primary-color);
+}
+div.form-wrapper .form label input:focus {
+  border-bottom: 3px solid #55efc4;
+}
+div.form-wrapper .form label input[type="email"]:invalid {
+  border-bottom: 3px solid #ff7675;
+}
+div.form-validator {
+  width: 100%;
+  margin: 0 auto;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.submit-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  outline: none;
+  font-family: var(--primary-font);
+  font-size: 1rem;
+  border: 2px solid var(--primary-color);
+  transition: 0.4s ease-in-out all;
+  border-radius: 0.3rem;
+}
+.submit-btn:hover {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+}
+.submit-btn.google {
+  color: var(--primary-color);
+  background-color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.submit-btn.google:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
