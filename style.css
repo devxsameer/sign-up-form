@@ -12,7 +12,7 @@
   --secondary-color: #212428;
   --text-color: white;
   --text-main: black;
-  --text-secondary: rgb(229, 229, 229);
+  --text-secondary: rgb(203, 203, 203);
 }
 body {
   font-family: var(--primary-font);
@@ -21,15 +21,17 @@ body {
   font-style: normal;
   color: var(--text-main);
   line-height: 1.5;
+  accent-color: var(--primary-color);
 }
 a {
-  color: var(--text-color);
-  text-decoration: none;
+  color: var(--text-main);
 }
 p {
   margin-bottom: 1em;
   text-wrap: pretty;
 }
+
+/* Main */
 .container {
   min-height: 100vh;
   display: flex;
@@ -90,13 +92,19 @@ p {
   align-items: center;
   gap: 1rem;
   font-size: 1.5rem;
-  transition: 0.5s ease-in-out all;
 }
-.footer ul li:hover {
-  transform: scale(1.2);
+.footer ul li:hover a > i {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+  border-radius: 0.5rem;
 }
 .footer a {
-  padding: 0.5rem;
+  text-decoration: none;
+}
+.footer a > i {
+  padding: 0.4rem;
+  color: var(--text-color);
+  transition: 0.3s ease-in-out all;
 }
 .footer h3 {
   font-size: 1rem;
@@ -134,13 +142,6 @@ div.form-wrapper .form {
   justify-content: center;
   gap: 1rem;
 }
-div.form-wrapper .form fieldset {
-  width: 100%;
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  color: var(--secondary-color);
-}
 div.form-wrapper .form .form-label {
   font-size: 0.9rem;
   margin-bottom: 1em;
@@ -161,6 +162,42 @@ div.form-wrapper .form label input:focus {
 div.form-wrapper .form label input[type="email"]:invalid {
   border-bottom: 3px solid #ff7675;
 }
+div.form-wrapper .form label[for="agree-checkbox"] {
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  gap: 0.5em;
+}
+div.form-wrapper .form label[for="agree-checkbox"] input {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+div.form-wrapper .form label[for="agree-checkbox"] input::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--primary-color);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+div.form-wrapper .form label[for="agree-checkbox"] input:checked::before {
+  transform: scale(1);
+}
+
 div.form-validator {
   width: 100%;
   margin: 0 auto;
